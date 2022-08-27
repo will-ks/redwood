@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Generate gql typedefs api 1`] = `
-"import { Prisma } from \\"@prisma/client\\"
+"import { Prisma } from "@prisma/client"
 import { GraphQLResolveInfo, GraphQLScalarType, GraphQLScalarTypeConfig } from 'graphql';
 import { RedwoodGraphQLContext } from '@redwoodjs/graphql-server/dist/functions/types';
 export type Maybe<T> = T | null;
@@ -12,9 +12,7 @@ export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Mayb
 export type ResolverFn<TResult, TParent, TContext, TArgs> = (
       args?: TArgs,
       obj?: { root: TParent; context: TContext; info: GraphQLResolveInfo }
-    ) => TResult extends PromiseLike<infer TResultAwaited>
-      ? Promise<Partial<TResultAwaited>>
-      : Promise<Partial<TResult>> | Partial<TResult>;
+    ) => TResult | Promise<TResult>
 export type RequireFields<T, K extends keyof T> = Omit<T, K> & { [P in K]-?: NonNullable<T[P]> };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
@@ -259,7 +257,7 @@ export type DirectiveResolvers<ContextType = RedwoodGraphQLContext> = {
 `;
 
 exports[`Generate gql typedefs web 1`] = `
-"import { Prisma } from \\"@prisma/client\\"
+"import { Prisma } from "@prisma/client"
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
